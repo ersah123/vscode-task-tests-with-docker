@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "All tests",
+            "command": "yarn test",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Single file",
+            "command": "yarn test -- ${input:filename}",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "'describe' block",
+            "command": "yarn test -- -t '${input:testSuite}'",
+            "problemMatcher": []
+        },
+    ],
+    "inputs": [
+        {
+            "id": "filename",
+            "description": "filename text containing for tests:",
+            "default": "",
+            "type": "promptString"
+        },
+        {
+            "id": "testSuite",
+            "description": "'describe' or 'it' block string for searching tests:",
+            "default": "",
+            "type": "promptString",
+        },
+    ]
+}

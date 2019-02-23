@@ -11,8 +11,8 @@ describe('<Link />', () => {
       );
       tree = component.toJSON();
   });
-
-  test('<App /> component rendered successfully', () => {
+  
+  test('Link component rendered successfully', () => {
     expect(tree).toMatchSnapshot();
   })
 })
