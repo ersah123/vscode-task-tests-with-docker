@@ -9,18 +9,31 @@
         },
         {
             "type": "shell",
-            "label": "Single file",
-            "command": "yarn test -- ${input:filename}",
+            "label": "All tests - watch selection",
+            "command": "yarn test ${input:select}",
             "problemMatcher": []
         },
         {
             "type": "shell",
-            "label": "'describe' block",
-            "command": "yarn test -- -t '${input:testSuite}'",
+            "label": "Single file",
+            "command": "yarn test ${input:filename}",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "'describe' or 'link' block",
+            "command": "yarn test -t '${input:testSuite}'",
             "problemMatcher": []
         },
     ],
     "inputs": [
+        {
+            "id": "select",
+            "description": "watch all flag selection",
+            "default": "--watchAll",
+            "type": "pickString",
+            "options": ["--watchAll", ""]
+        },
         {
             "id": "filename",
             "description": "filename text containing for tests:",

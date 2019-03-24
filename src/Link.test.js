@@ -17,7 +17,7 @@ describe('<Link />', () => {
       expect(tree).toMatchSnapshot();
   })
 
-  test('<Link /> changes when mouse enter', () => {
+  test('<Link /> changes when mouse enter - itnext', () => {
       // manually trigger the callback
       tree.props.onMouseEnter();
       // re-rendering

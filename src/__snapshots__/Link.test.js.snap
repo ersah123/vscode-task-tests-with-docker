@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Link /> <Link /> changes when mouse enter 1`] = `
+exports[`<Link /> <Link /> changes when mouse enter - itnext 1`] = `
 <a
   className="hovered"
   href="http://www.facebook.com"
