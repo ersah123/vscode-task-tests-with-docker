@@ -1,0 +1,50 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "type": "shell",
+          "label": "All tests",
+          "command": "docker exec -it react-tasks /bin/sh -c \"yarn test\"",
+          "problemMatcher": []
+      },
+      {
+          "type": "shell",
+          "label": "All tests - watch selection",
+          "command": "docker exec -it react-tasks /bin/sh -c \"yarn test ${input:select}\"",
+          "problemMatcher": []
+      },
+      {
+          "type": "shell",
+          "label": "Single file",
+          "command": "docker exec -it react-tasks /bin/sh -c \"yarn test ${input:filename}\"",
+          "problemMatcher": []
+      },
+      {
+          "type": "shell",
+          "label": "'describe' or 'link' block",
+          "command": "docker exec -it react-tasks /bin/sh -c \"yarn test -t '${input:testSuite}'\"",
+          "problemMatcher": []
+      },
+  ],
+  "inputs": [
+      {
+          "id": "select",
+          "description": "watch all flag selection",
+          "default": "--watchAll",
+          "type": "pickString",
+          "options": ["--watchAll", ""]
+      },
+      {
+          "id": "filename",
+          "description": "filename text containing for tests:",
+          "default": "",
+          "type": "promptString"
+      },
+      {
+          "id": "testSuite",
+          "description": "'describe' or 'it' block string for searching tests:",
+          "default": "",
+          "type": "promptString",
+      },
+  ]
+}
